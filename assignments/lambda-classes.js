@@ -30,10 +30,10 @@ class Instructor extends Person {
     this.catchPhrase = obj.catchPhrase;
   }
   demo(str) {
-    return `Today we are learning about ${str}`;
+    console.log(`Today we are learning about ${str}`);
   }
   grade(obj, str) {
-    return `${obj.name} receives a perfect score on ${str}`;
+    console.log(`${obj.name} receives a perfect score on ${str}`);
   }
 }
 
@@ -47,3 +47,23 @@ class Instructor extends Person {
 // listsSubjects a method that logs out all of the student's favoriteSubjects one by one.
 // PRAssignment a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
 // sprintChallenge similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
+
+class Student extends Person {
+  constructor(obj) {
+    super(obj);
+    this.previousBackground = obj.previousBackground;
+    this.className = obj.className;
+    this.favSubjects = obj.favSubjects;
+  }
+  listsSubjects() {
+    for (x in this.favSubjects) {
+      console.log(x);
+    }
+  }
+  PRAssinment(str) {
+    console.log(`${this.name} has submitted a PR for ${str}`);
+  }
+  sprintChallenge(str) {
+    console.log(`${this.name} has begun a sprint challenge on ${str}`);
+  }
+}
