@@ -40,7 +40,7 @@ class GameObject {
   constructor(obj) {
     this.createdAt = obj.createdAt;
     this.name = obj.name;
-    this.dimensions = obj.dimsensions;
+    this.dimensions = obj.dimensions;
   }
   destroy() {
     return `${this.name} was removed from the game`;
