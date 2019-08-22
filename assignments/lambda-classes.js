@@ -8,7 +8,7 @@ class Person {
   }
 
   speak() {
-    return `Hello my name is ${this.name}, I am from ${this.location}.`;
+    console.log(`Hello my name is ${this.name}, I am from ${this.location}.`);
   }
 }
 
@@ -56,7 +56,7 @@ class Student extends Person {
     this.favSubjects = obj.favSubjects;
   }
   listsSubjects() {
-    for (x in this.favSubjects) {
+    for (let x of this.favSubjects) {
       console.log(x);
     }
   }
@@ -90,3 +90,46 @@ class ProjectManagers extends Instructor {
     console.log(`${this.name} debugs ${obj.name}'s code on ${str}`);
   }
 }
+
+const brit = new Instructor({
+  name: "Brit",
+  age: "None of my business",
+  location: "Canada",
+  speciality: "Web Development",
+  favLanguage: "JavaScirpt",
+  catchPhrase: "Good girl, Ada!"
+});
+
+const wizard = new ProjectManagers({
+  name: "The guy from the cover of SICP",
+  age: "90",
+  location: "Time and Space",
+  specialty: "Prime Numbers",
+  favLanguage: "Haskell",
+  catchPhrase: "You will never be as good as me.",
+  gradClassName: "WEB1",
+  favInstructor: "Kyle Simpson"
+});
+
+const nick = new Student({
+  name: "Nicholas",
+  age: 28,
+  location: "California",
+  specialty: "Freelance beer consultant",
+  favLanguage: "JavaScript",
+  catchPHrase: "I am vegan btw",
+  previousBackground: "Beer Sales",
+  className: "WEB23",
+  favSubjects: ["Web Development", "Math", "Computer Science", "Brewing"]
+});
+
+console.log(nick.age);
+console.log(wizard.catchPhrase);
+console.log(nick.listsSubjects());
+console.log(wizard.debugsCode(nick, "math"));
+console.log(wizard.standUp("Number-Theory"));
+console.log(nick.PRAssinment("Javascript III"));
+console.log(nick.sprintChallenge("JavaScript fundamentals"));
+console.log(brit.grade(nick, "CSS Flexbox"));
+console.log(brit.demo("JavaScript Objects"));
+console.log(nick.speak());
